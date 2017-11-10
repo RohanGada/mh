@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+@import
+  // Ionicons
+  "ionicons/ionicons.scss",
+
+  // Variables
+  "mixins",
+  "variables",
+
+  // Base
+  "reset",
+  "scaffolding",
+  "type",
+
+  // Components
+  "action-sheet",
+  "backdrop",
+  "bar",
+  "tabs",
+  "menu",
+  "modal",
+  "popover",
+  "popup",
+  "loading",
+  "items",
+  "list",
+  "badge",
+  "slide-box",
+  "slides",
+  "refresher",
+  "spinner",
+
+  // Forms
+  "form",
+  "checkbox",
+  "toggle",
+  "radio",
+  "range",
+  "select",
+  "progress",
+
+  // Buttons
+  "button",
+  "button-bar",
+
+  // Util
+  "grid",
+  "util",
+  "platform",
+
+  // Animations
+  "animations",
+  "transitions";
+$primary: #c20828 !default;
+$dark: #6b0c19 !default;
+
+  .bg-color-mh {
+    background: $primary;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient($dark, $primary);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($dark, $primary);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($dark, $primary);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient($dark, $primary);
+    /* Standard syntax (must be last) */
+  }
+

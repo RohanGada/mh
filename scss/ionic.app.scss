@@ -1,0 +1,402 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+$primary: #c20828 !default;
+$dark: #6b0c19 !default;
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+.bg-color-mh {
+    height: 100vh;
+  background: $primary;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($dark, $primary);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($dark, $primary);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($dark, $primary);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient($dark, $primary);
+  /* Standard syntax (must be last) */
+}
+$item-width:120%; // Now we can use percentages!
+$item-separation: 0px; // This now is set with Js
+$viewer-distance: 800px;
+
+.height-50p{
+   height: 43vh;
+  margin-top: 60px;
+ }
+
+.width-30{
+  width: 40% !important;
+}
+
+.rotate-sl{
+  width: 120%;
+  img{
+        // width: 20px;
+        box-sizing: border-box;
+        padding: 0 0px;
+        border: 1px solid white;
+        border-radius: 2em;
+        // background: green;
+        background: -webkit-radial-gradient(red,transparent);
+        /* Safari 5.1 to 6.0 */
+
+        background: -o-radial-gradient(red,transparent);
+        /* For Opera 11.6 to 12.0 */
+
+        background: -moz-radial-gradient(red,transparent);
+        /* For Firefox 3.6 to 15 */
+
+        background: radial-gradient(red,transparent)
+
+
+  }
+}
+
+.carousel {
+  padding: 20px;
+  perspective: $viewer-distance;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  >* {
+    flex: 0 0 auto;
+  }
+  figure {
+    margin: 0;
+    width: $item-width;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    img {
+      width: 100%;
+      box-sizing: border-box;
+      // background: white;
+      // border: 2px white solid;
+      padding: 0 $item-separation / 2;
+      &:not(:first-of-type) {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+    div{
+      img {
+        width: 100%;
+        box-sizing: border-box; // background: white;
+        // border: 2px white solid;
+        padding: 0 $item-separation / 2;
+        &:not(:first-of-type) {
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+
+    }
+  }
+ 
+  nav {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 0;
+    button {
+      flex: 0 0 auto;
+      margin: 0 5px;
+      cursor: pointer;
+      color: #333;
+      background: none;
+      border: 1px solid;
+      letter-spacing: 1px;
+      padding: 5px 10px;
+    }
+  }
+}
+
+
+
+
+
+
+#cubeTransition {
+  /*position: relative;
+	width: 100%;
+	height: 100%;
+	-webkit-perspective: 1200px;
+	perspective: 1200px;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);*/
+  position: relative;
+  width: 35%;
+  height: 100%;
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 25%;
+  left: 10%;
+}
+
+#cubeTransition div {
+  min-height: 50%;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  font-size: 5em;
+  color: #fff;
+  visibility: hidden;
+  transition: opacity 5ms;
+}
+
+#cubeTransition h2 {
+  position: relative;
+  top: 200px;
+  margin: 0;
+  font-size: 1.5em;
+  text-align: center;
+  text-shadow: 1px 1px 0px rgba( 0, 0, 0, 0.1);
+}
+
+
+/*.page1 {
+	background: #89b32f;
+}
+
+.page2 {
+	background: #dc6c5f;
+}
+
+.page3 {
+	background: #64b9d2;
+}
+
+.page4 {
+	background: green;
+}*/
+
+.visible {
+  visibility: visible !important;
+}
+
+.rotateCubeTopOut {
+  transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 100%;
+  animation: rotateCubeTopOut .6s both ease-in;
+  -webkit-animation: rotateCubeTopOut .6s both ease-in;
+}
+
+.rotateCubeTopIn {
+  transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0%;
+  animation: rotateCubeTopIn .6s both ease-in;
+  -webkit-animation: rotateCubeTopIn .6s both ease-in;
+}
+
+.rotateCubeBottomOut {
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-animation: rotateCubeBottomOut .6s both ease-in;
+  animation: rotateCubeBottomOut .6s both ease-in;
+}
+
+.rotateCubeBottomIn {
+  transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 100%;
+  -webkit-animation: rotateCubeBottomIn .6s both ease-in;
+  animation: rotateCubeBottomIn .6s both ease-in;
+}
+
+@keyframes rotateCubeTopOut {
+  50% {
+    animation-timing-function: ease-out;
+    transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
+  }
+  100% {
+    opacity: .3;
+    transform: translateY(-100%) rotateX(90deg);
+  }
+}
+
+@-webkit-keyframes rotateCubeTopOut {
+  50% {
+    -webkit-animation-timing-function: ease-out;
+    -webkit-transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
+  }
+  100% {
+    opacity: .3;
+    -webkit-transform: translateY(-100%) rotateX(90deg);
+  }
+}
+
+@keyframes rotateCubeTopIn {
+  0% {
+    opacity: .3;
+    transform: translateY(100%) rotateX(-90deg);
+  }
+  50% {
+    animation-timing-function: ease-out;
+    transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
+  }
+}
+
+@-webkit-keyframes rotateCubeTopIn {
+  0% {
+    opacity: .3;
+    -webkit-transform: translateY(100%) rotateX(-90deg);
+  }
+  50% {
+    -webkit-animation-timing-function: ease-out;
+    -webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
+  }
+}
+
+@keyframes rotateCubeBottomOut {
+  50% {
+    animation-timing-function: ease-out;
+    transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
+  }
+  100% {
+    opacity: .3;
+    transform: translateY(100%) rotateX(-90deg);
+  }
+}
+
+@-webkit-keyframes rotateCubeBottomOut {
+  50% {
+    -webkit-animation-timing-function: ease-out;
+    -webkit-transform: translateY(50%) translateZ(-200px) rotateX(-45deg);
+  }
+  100% {
+    opacity: .3;
+    -webkit-transform: translateY(100%) rotateX(-90deg);
+  }
+}
+
+@keyframes rotateCubeBottomIn {
+  0% {
+    opacity: .3;
+    transform: translateY(-100%) rotateX(90deg);
+  }
+  50% {
+    animation-timing-function: ease-out;
+    transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
+  }
+}
+
+@-webkit-keyframes rotateCubeBottomIn {
+  0% {
+    opacity: .3;
+    -webkit-transform: translateY(-100%) rotateX(90deg);
+  }
+  50% {
+    -webkit-animation-timing-function: ease-out;
+    -webkit-transform: translateY(-50%) translateZ(-200px) rotateX(45deg);
+  }
+}
+
+#bullets {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#bullets li {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 3px;
+  background: rgba( 255, 255, 255, 0.5);
+  box-shadow: 0px 0px 4px rgba( 0, 0, 0, 0.2);
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba( 0, 0, 0, 0);
+}
+
+#bullets li:hover {
+  background: rgba( 255, 255, 255, 0.8);
+}
+
+#bullets li.active {
+  cursor: default;
+  background: #fff;
+}
+
+.credit {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  margin: 0;
+  z-index: 1;
+  font-size: 0.9em;
+}
+
+.credit a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    font-size: 10px;
+  }
+  #cubeTransition h2 {
+    font-size: 1em;
+  }
+  .bullets li {
+    margin: 0 6px;
+  }
+  .credit {
+    bottom: initial;
+    top: 10px;
+    right: 10px;
+  }
+  .share,
+  .github-ribbon {
+    display: none;
+  }
+}
+
+.img_style img { border: 4px solid black; padding: 0px !important; margin: 0px !important;}

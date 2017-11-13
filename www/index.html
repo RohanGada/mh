@@ -126,7 +126,10 @@
             rotateCarousel(currImage);
           }
         }
-
+        window.CP[name].drag = function (x) {
+          console.log(window.innerWidth,x, x-window.innerWidth,currImage)
+          figure.style.transform = 'rotateY(' + (2 * Math.PI) / (window.innerWidth / (x-window.innerWidth))  +(currImage * -theta)+ 'rad)';
+        }
         function rotateCarousel(imageIndex) {
           figure.style.transform = 'rotateY(' + imageIndex * -theta + 'rad)';
         }
@@ -158,6 +161,7 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/lodash.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>

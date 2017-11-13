@@ -72,17 +72,32 @@ angular.module('starter.controllers', [])
   .controller('PlaylistCtrl', function ($scope, $stateParams) {})
   .controller('SearchCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate) {
     $ionicSideMenuDelegate.canDragContent(false);
-    $scope.swipeLeft = function (name) {
-      window
-        .CP[name]
-        .nextSwipe();
-    }
-    $scope.swipeRight = function (name) {
-      window
-        .CP[name]
-        .previousSwipe();
-    }
+    // $scope.swipeLeft = function (name) {
+    //   window
+    //     .CP[name]
+    //     .nextSwipe();
+    // }
+    // $scope.swipeRight = function (name) {
+    //   window
+    //     .CP[name]
+    //     .previousSwipe();
+    // }
     console.log('search')
+    $scope.canDrag = true
+    $scope.dragged = function (ev, name) {
+//       if($scope.canDrag){
+//         $scope.canDrag = false;
+// _.debounce(function () {
+//   $scope.canDrag = true;
+//   console.log('hey')
+    window
+      .CP[name]
+      .drag(ev.gesture.center.pageX);
+
+  // }, 1000)
+  //     }
+     
+    }
     // $(document)
     // .ready(function () {
 

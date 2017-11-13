@@ -127,8 +127,8 @@
           }
         }
         window.CP[name].drag = function (x) {
-          console.log(window.innerWidth,x, x-window.innerWidth,currImage)
-          figure.style.transform = 'rotateY(' + (2 * Math.PI) / (window.innerWidth / (x-window.innerWidth))  +(currImage * -theta)+ 'rad)';
+          // console.log(window.innerWidth,x, x-window.innerWidth,currImage)
+          figure.style.transform = 'rotateY(' + (x-window.innerWidth)/(window.innerWidth/(2*Math.sin(Math.PI/n)))  +(currImage * -theta)+ 'rad)';
         }
         function rotateCarousel(imageIndex) {
           figure.style.transform = 'rotateY(' + imageIndex * -theta + 'rad)';

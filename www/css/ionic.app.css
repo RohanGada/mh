@@ -9886,7 +9886,7 @@ a.button {
 
 .bar-mh {
   border: 0px !important;
-  background: #6b0c19 !important;
+  background: transparent !important;
   /* For browsers that do not support gradients */
   color: #fff !important; }
 

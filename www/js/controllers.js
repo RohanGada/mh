@@ -87,56 +87,56 @@ angular.module('starter.controllers', [])
       },
       {
         label: 'Manager Approvals (EP)',
-        img: 'img/employee-drawer/1.png',
+        img: 'img/employee-drawer/2.png',
         sref: 'app.managerapproval'
       },
       {
         label: 'Travel Approval',
-        img: 'img/employee-drawer/1.png',
+        img: 'img/employee-drawer/3.png',
         sref: 'app.travelapproval'
       },
       {
-        label: 'My Space',
+        label: 'My Payslip',
         img: 'img/employee-drawer/1.png',
         sref: ''
       },
       {
-        label: 'My Space',
+        label: 'Salary Card',
         img: 'img/employee-drawer/1.png',
         sref: ''
       },
       {
-        label: 'My Space',
+        label: 'Flexi Pay',
         img: 'img/employee-drawer/1.png',
         sref: ''
       },
       {
-        label: 'My Space',
+        label: 'Income Tax',
         img: 'img/employee-drawer/1.png',
         sref: ''
       },
       {
-        label: 'My Space',
+        label: 'Performance Letter',
         img: 'img/employee-drawer/1.png',
         sref: ''
       },
       {
-        label: 'My Space',
+        label: 'ESOP',
         img: 'img/employee-drawer/1.png',
         sref: ''
       },
       {
-        label: 'My Space',
+        label: 'PF Balance',
         img: 'img/employee-drawer/1.png',
         sref: ''
       },
       {
-        label: 'My Space',
+        label: 'Credit Society',
         img: 'img/employee-drawer/1.png',
         sref: ''
       },
       {
-        label: 'My Space',
+        label: 'Superannuation',
         img: 'img/employee-drawer/1.png',
         sref: ''
       },

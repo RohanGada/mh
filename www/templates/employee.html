@@ -1,0 +1,26 @@
+<ion-view view-title="" class="bg-color-mh">
+  <!-- <ion-nav-bar class="bar-mh"> -->
+  <!-- <ion-nav-back-button></ion-nav-back-button> -->
+  <!-- </ion-nav-bar> -->
+  <ion-subheader-bar class="bar bar-subheader bg-color-mh" style="    border: 0px !important;">
+    <div class="title" style="color:white;font-weight:bold;">
+      <!-- <small translate="ALL_POSTS"> -->
+      Employee
+      <!-- </small> -->
+    </div>
+    <!-- <button class="button icon-right ion-ios-compose button-clear button-balanced"></button> -->
+  </ion-subheader-bar>
+  <ion-content class="has-subheader" style="z-index:9;">
+    <div class="row" ng-repeat="row in grid">
+      <div ui-sref="{{tabIcon.sref}}" class="col grid-icon-mh" ng-repeat="tabIcon in row">
+        <div>
+            <img ng-src="{{tabIcon.img}}" alt="">
+        </div>
+        <div>
+            <span class="text-center">{{tabIcon.label}}</span>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

@@ -20,7 +20,7 @@
     <script>
     window.addEventListener('load', function () {
         var intervalCarousel = setInterval(function () {
-          console.count()
+          // console.count()
           var carousels = document.querySelectorAll('div.carousel.height-50p');
           if(carousels.length > 0){
             clearInterval(intervalCarousel)
@@ -34,7 +34,7 @@
           }
          }, 500);
         var intervalCarousel1 = setInterval(function () {
-          console.count()
+          // console.count()
           var carousels2 = document.querySelectorAll('div.carousel.h-5');
           if(carousels2.length > 0){
             clearInterval(intervalCarousel1)
@@ -126,11 +126,41 @@
             rotateCarousel(currImage);
           }
         }
-        window.CP[name].drag = function (x) {
-          // console.log(window.innerWidth,x, x-window.innerWidth,currImage)
-          figure.style.transform = 'rotateY(' + (x-window.innerWidth)/(window.innerWidth/(2*Math.sin(Math.PI/n)))  +(currImage * -theta)+ 'rad)';
+        var isFlipping = true;
+        window.CP[name].drag = function (gesture) {
+          var offset = gesture.deltaX;
+          var threshold = window.innerWidth / 2;
+            // rotateCarousel(++currImage);
+          var touch =  (offset) / (window.innerWidth / (2 * Math.sin(Math.PI / n))) + (currImage * -theta);
+          // console.log(touch,theta)
+          // if(parseInt(Math.abs(touch % theta))/1000 >= 200 && parseInt(Math.abs(touch % theta))/1000 < 200){
+          //   figure.style.transform = 'rotateY(' + parseInt(Math.abs(touch % theta) / 10) * -theta + 'rad)';
+          //   ++currImage;
+          // }else{
+            figure.style.transform = 'rotateY(' + touch+ 'rad)';
+          // }
+          // console.log(offset,threshold,x)
+          // if(gesture.center.pageX > threshold && gesture.direction =='right'){
+          //   // console.log('right', (gesture.center.pageX) / (window.innerWidth / (2 * Math.sin(Math.PI / n))) )
+          //   // if(isFlipping){
+          //   //   isFlipping = false;
+          //   //   rotateCarousel(++currImage)
+          //   //   isFlipping = true;
+          //   // }
+          //   // figure.style.transform = 'rotateY(' + (gesture.center.pageX) / (window.innerWidth / (2 * Math.sin(Math.PI / n))) + (currImage * -theta)+ ' rad)';
+          // } else if(Math.abs(offset) < threshold){
+            
+          // }else{
+            
+          // }
         }
+        // function rotateCarousel(imageIndex) {
+          
+        //     console.log(imageIndex * -theta)
+        //     figure.style.transform = 'rotateY(' + imageIndex * -theta + 'rad)';
+        // }
         function rotateCarousel(imageIndex) {
+          console.log(imageIndex * -theta)
           figure.style.transform = 'rotateY(' + imageIndex * -theta + 'rad)';
         }
       }</script>

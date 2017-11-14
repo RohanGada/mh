@@ -23,7 +23,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+
+$ionicConfigProvider
+  .backButton
+  .previousTitleText(false)
+  .text('');
+$ionicConfigProvider
+  .views
+  .maxCache(0);
   $stateProvider
 
     .state('app', {
@@ -48,6 +56,33 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'templates/browse.html'
+        }
+      }
+    })
+    .state('app.managerapproval', {
+      url: '/managerapproval',
+      views: {
+        'menuContent': {
+templateUrl : 'templates/manager-approval.html',
+controller : 'ManagerApprovalCtrl'
+        }
+      }
+    })
+    .state('app.employee', {
+      url: '/employee',
+      views: {
+        'menuContent': {
+templateUrl : 'templates/employee.html',
+controller : 'EmployeeCtrl'
+        }
+      }
+    })
+    .state('app.travelapproval', {
+      url: '/travelapproval',
+      views: {
+        'menuContent': {
+templateUrl : 'templates/travel-approval.html',
+controller : 'TravelApprovalCtrl'
         }
       }
     })

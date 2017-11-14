@@ -9884,6 +9884,15 @@ a.button {
   background: linear-gradient(#6b0c19, #c20828);
   /* Standard syntax (must be last) */ }
 
+.bar-mh {
+  border: 0px !important;
+  background: #6b0c19 !important;
+  /* For browsers that do not support gradients */
+  color: #fff !important; }
+
+.bar-mh .button.button-clear {
+  color: white !important; }
+
 .bg-color-mh {
   height: 100vh;
   background: #c20828;
@@ -9896,6 +9905,20 @@ a.button {
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(#6b0c19, #c20828);
   /* Standard syntax (must be last) */ }
+
+.grid-icon-mh div {
+  text-align: center; }
+  .grid-icon-mh div img {
+    height: 63px;
+    border-radius: 9px; }
+  .grid-icon-mh div span {
+    color: white;
+    font-size: 13px;
+    font-weight: bold; }
+
+.list-manager img + img {
+  padding-top: 0px !important;
+  margin-top: -6px !important; }
 
 .height-50p {
   height: 43vh;

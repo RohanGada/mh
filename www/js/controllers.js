@@ -70,33 +70,141 @@ angular.module('starter.controllers', [])
   })
 
   .controller('PlaylistCtrl', function ($scope, $stateParams) {})
+  .controller('ManagerApprovalCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate) {
+    $ionicSideMenuDelegate.canDragContent(false);
+
+  })
+  .controller('TravelApprovalCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate) {
+    $ionicSideMenuDelegate.canDragContent(false);
+
+  })
+  .controller('EmployeeCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate) {
+    $ionicSideMenuDelegate.canDragContent(false);
+    $scope.gridIcons = [{
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'Manager Approvals (EP)',
+        img: 'img/employee-drawer/1.png',
+        sref: 'app.managerapproval'
+      },
+      {
+        label: 'Travel Approval',
+        img: 'img/employee-drawer/1.png',
+        sref: 'app.travelapproval'
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+      {
+        label: 'My Space',
+        img: 'img/employee-drawer/1.png',
+        sref: ''
+      },
+    ]
+    $scope.grid = _.chunk($scope.gridIcons, 3);
+    console.log($scope.grid)
+  })
   .controller('SearchCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate) {
     $ionicSideMenuDelegate.canDragContent(false);
-    // $scope.swipeLeft = function (name) {
-    //   window
-    //     .CP[name]
-    //     .nextSwipe();
-    // }
-    // $scope.swipeRight = function (name) {
-    //   window
-    //     .CP[name]
-    //     .previousSwipe();
-    // }
+    $scope.swipeLeft = function (name) {
+      window
+        .CP[name]
+        .nextSwipe();
+    }
+    $scope.swipeRight = function (name) {
+      window
+        .CP[name]
+        .previousSwipe();
+    }
     console.log('search')
     $scope.canDrag = true
     $scope.dragged = function (ev, name) {
-//       if($scope.canDrag){
-//         $scope.canDrag = false;
-// _.debounce(function () {
-//   $scope.canDrag = true;
-//   console.log('hey')
-    window
-      .CP[name]
-      .drag(ev.gesture.center.pageX);
+      //       if($scope.canDrag){
+      //         $scope.canDrag = false;
+      // _.debounce(function () {
+      //   $scope.canDrag = true;
+      //   console.log('hey')
+      // console.log(ev);
+      // window.CP[name].drag(ev.gesture,ev.gesture);
 
-  // }, 1000)
-  //     }
-     
+      // }, 1000)
+      //     }
+
     }
     // $(document)
     // .ready(function () {

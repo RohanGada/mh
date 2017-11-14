@@ -24,6 +24,30 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.bar-mh{
+      border:0px !important;
+       background: $dark !important;
+       /* For browsers that do not support gradients */
+
+      //  background: -webkit-linear-gradient($dark, $primary);
+      //  /* For Safari 5.1 to 6.0 */
+
+      //  background: -o-linear-gradient($dark, $primary);
+      //  /* For Opera 11.1 to 12.0 */
+
+      //  background: -moz-linear-gradient($dark, $primary);
+      //  /* For Firefox 3.6 to 15 */
+
+      //  background: linear-gradient($dark, $primary);
+
+      // background-image: linear-gradient(0deg, #28a54c, #28a54c 50%, transparent 50%);
+      color: #fff !important;
+
+}
+.bar-mh .button.button-clear{
+  color:white !important;
+}
+
 .bg-color-mh {
     height: 100vh;
   background: $primary;
@@ -36,6 +60,34 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   /* For Firefox 3.6 to 15 */
   background: linear-gradient($dark, $primary);
   /* Standard syntax (must be last) */
+}
+.mh-item{
+  // min-height: 10px;
+  // padding: 10px !important;
+  // img{
+  //   top:5px !important;
+  //   left: 5px !important;
+  // }
+}
+.grid-icon-mh{
+  div{
+    text-align: center;
+    img{
+      height: 63px;
+      border-radius: 9px;
+    }
+    span{
+        color: white;
+        font-size: 13px;
+        font-weight: bold;
+    }
+  }
+}
+.list-manager{
+  img+img{
+    padding-top:0px !important;
+    margin-top:-6px !important;
+  }
 }
 $item-width:120%; // Now we can use percentages!
 $item-separation: 0px; // This now is set with Js

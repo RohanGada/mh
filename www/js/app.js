@@ -86,6 +86,15 @@ controller : 'TravelApprovalCtrl'
         }
       }
     })
+    .state('app.mypayslip', {
+      url: '/mypayslip',
+      views: {
+        'menuContent': {
+templateUrl : 'templates/mypayslip.html',
+controller : 'MyPaySlipCtrl'
+        }
+      }
+    })
     .state('app.playlists', {
       url: '/playlists',
       views: {

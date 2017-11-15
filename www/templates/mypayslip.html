@@ -1,0 +1,60 @@
+<ion-view view-title="" class="bg-color-mh">
+    <!-- <ion-nav-bar class="bar-mh"> -->
+    <!-- <ion-nav-back-button></ion-nav-back-button> -->
+    <!-- </ion-nav-bar> -->
+    <ion-subheader-bar class="bar bar-subheader bg-color-mh" style="    border: 0px !important;">
+        <div class="title" style="color:white;font-weight:bold;">
+            <!-- <small translate="ALL_POSTS"> -->
+            My Pay Slip
+            <!-- </small> -->
+        </div>
+        <!-- <button class="button icon-right ion-ios-compose button-clear button-balanced"></button> -->
+    </ion-subheader-bar>
+    <img src="img/title.png" class="full-image" alt="">
+    <ion-content class="has-subheader" style="z-index:9;">
+
+        <!-- <div class="list-manager">
+            <img src="img/menu/1.png" class="full-image" style="padding: 6px;border-radius: 11px;">
+            <img src="img/menu/2.png" class="full-image" style="padding: 6px;border-radius: 11px;">
+            <img src="img/menu/3.png" class="full-image" style="padding: 6px;border-radius: 11px;">
+            <img src="img/menu/4.png" class="full-image" style="padding: 6px;border-radius: 11px;">
+        </div> -->
+
+        <!-- <div class="list">
+        
+            <a class="item item-avatar mh-item" href="#">
+                <h2>Leave Request</h2>
+                <p></p>
+                <span class="badge badge-assertive">0</span>
+            </a>
+        
+        </div> -->
+        <div class="list mh-list-select">
+        
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Select Month 
+                </div>
+                <select ng-model="variables.month">
+                    <option value="">Select</option>
+                    <option value="Jan">January</option>
+                    <option value="Feb">February</option>
+                    <option value="Jan">January</option>
+                    <option value="Jan">January</option>
+                    <option value="Jan">January</option>
+                    <option value="Jan">January</option>
+                    <option value="Jan">January</option>
+                    <option value="Jan">January</option>
+                    <option value="Jan">January</option>
+                </select>
+            </label>
+        
+        </div>
+        <div class="padding mg-view-payslip">
+            <button ng-disabled="!variables.month" class="button button-block button-mh" ng-click="pdfModal.show()">
+                View Payslip
+            </button>
+        </div>
+    </ion-content>
+
+</ion-view>

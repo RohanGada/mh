@@ -74,6 +74,43 @@ angular.module('starter.controllers', [])
     $ionicSideMenuDelegate.canDragContent(false);
 
   })
+.controller('MyPaySlipCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate, $ionicModal) {
+    $ionicSideMenuDelegate.canDragContent(false);
+    console.log('My Pay Slip');
+    $scope.variables = {};
+    $scope.variables.month = '';
+    $ionicModal
+      .fromTemplateUrl('templates/pdf-viewer.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+      })
+      .then(function (modal) {
+        console.log(modal)
+        $scope.pdfModal = modal;
+      });
+    // $scope.openPDFModal = function () {
+    //   console.log('openPDFModal')
+    //   $scope.pdfModal.show();
+    // };
+    // $scope.closePDFModal = function () {
+    //   $scope.pdfModal.hide();
+    // };
+    // Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function () {
+      $scope
+        .pdfModal
+        .remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function () {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function () {
+      // Execute action
+    });
+
+  })
   .controller('TravelApprovalCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate) {
     $ionicSideMenuDelegate.canDragContent(false);
 
@@ -98,7 +135,7 @@ angular.module('starter.controllers', [])
       {
         label: 'My Payslip',
         img: 'img/employee-drawer/1.png',
-        sref: ''
+        sref: 'app.mypayslip'
       },
       {
         label: 'Salary Card',
@@ -210,6 +247,6 @@ angular.module('starter.controllers', [])
     // .ready(function () {
 
 
-    
+
     // });
   });

@@ -16,6 +16,7 @@ $dark:                            #444 !default;
 */
 $primary: #c20828 !default;
 $dark: #6b0c19 !default;
+$onHover: #540a11 !default;
 
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -47,6 +48,34 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 .bar-mh .button.button-clear{
   color:white !important;
+}
+.mh-list-select{
+  .item{
+    background-color: $dark !important;
+    // box-shadow: 2px 2px 2px #ddd;
+    border: 0px !important;
+    border-radius: 9px;
+    div{
+        color: white !important;
+    }
+    select{
+      background: $primary !important;
+      color: white !important;
+    }
+  }
+}
+// .mh-view-payslip{
+  
+// }
+.button-mh {
+  border-color: transparent;
+  background-color:$primary !important;
+  color: #fff;
+}
+.button-mh:hover {
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 1px 2px 10px $onHover;
 }
 
 .bg-color-mh {

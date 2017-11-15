@@ -9893,6 +9893,26 @@ a.button {
 .bar-mh .button.button-clear {
   color: white !important; }
 
+.mh-list-select .item {
+  background-color: #6b0c19 !important;
+  border: 0px !important;
+  border-radius: 9px; }
+  .mh-list-select .item div {
+    color: white !important; }
+  .mh-list-select .item select {
+    background: #c20828 !important;
+    color: white !important; }
+
+.button-mh {
+  border-color: transparent;
+  background-color: #c20828 !important;
+  color: #fff; }
+
+.button-mh:hover {
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 1px 2px 10px #540a11; }
+
 .bg-color-mh {
   height: 100vh;
   background: #c20828;

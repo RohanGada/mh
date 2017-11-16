@@ -74,11 +74,14 @@ angular.module('starter.controllers', [])
     $ionicSideMenuDelegate.canDragContent(false);
 
   })
-.controller('MyPaySlipCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate, $ionicModal) {
+.controller('MyPaySlipCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate, $ionicModal,$sce) {
     $ionicSideMenuDelegate.canDragContent(false);
     console.log('My Pay Slip');
     $scope.variables = {};
     $scope.variables.month = '';
+var PDFUrl = 'http://www.seemasystems.com/bin/downloads/hpms/PaySlip_and_Employee_account.pdf';
+// var PDFUrl = 'http://infolab.stanford.edu/pub/papers/google.pdf';
+// $scope.googleDocViewer = "http://docs.google.com/gview?url="+PDFUrl+"&embedded=true";
     $ionicModal
       .fromTemplateUrl('templates/pdf-viewer.html', {
         scope: $scope,
@@ -87,6 +90,8 @@ angular.module('starter.controllers', [])
       .then(function (modal) {
         console.log(modal)
         $scope.pdfModal = modal;
+$scope.googleDocViewer = $sce.trustAsResourceUrl("http://docs.google.com/gview?url=" + PDFUrl + "&embedded=true");
+
       });
     // $scope.openPDFModal = function () {
     //   console.log('openPDFModal')

@@ -79,9 +79,7 @@ angular.module('starter.controllers', [])
     console.log('My Pay Slip');
     $scope.variables = {};
     $scope.variables.month = '';
-var PDFUrl = 'http://www.seemasystems.com/bin/downloads/hpms/PaySlip_and_Employee_account.pdf';
-// var PDFUrl = 'http://infolab.stanford.edu/pub/papers/google.pdf';
-// $scope.googleDocViewer = "http://docs.google.com/gview?url="+PDFUrl+"&embedded=true";
+    var PDFUrl = 'http://www.seemasystems.com/bin/downloads/hpms/PaySlip_and_Employee_account.pdf';
     $ionicModal
       .fromTemplateUrl('templates/pdf-viewer.html', {
         scope: $scope,
@@ -90,7 +88,7 @@ var PDFUrl = 'http://www.seemasystems.com/bin/downloads/hpms/PaySlip_and_Employe
       .then(function (modal) {
         console.log(modal)
         $scope.pdfModal = modal;
-$scope.googleDocViewer = $sce.trustAsResourceUrl("http://docs.google.com/gview?url=" + PDFUrl + "&embedded=true");
+        $scope.googleDocViewer = $sce.trustAsResourceUrl("http://docs.google.com/gview?url=" + PDFUrl + "&embedded=true");
 
       });
     // $scope.openPDFModal = function () {
@@ -139,7 +137,7 @@ $scope.googleDocViewer = $sce.trustAsResourceUrl("http://docs.google.com/gview?u
       },
       {
         label: 'My Payslip',
-        img: 'img/employee-drawer/1.png',
+        img: 'img/employee-drawer/4.png',
         sref: 'app.mypayslip'
       },
       {

@@ -3,7 +3,10 @@
         <h1 class="title" style="color:white;">Your Payslip</h1>
         <button class="button button-clear button-primary primary" ng-click="pdfModal.hide()">Cancel</button>
     </ion-header-bar>
-    <ion-content>
-        Hello!
+    <ion-content class="has-header">
+        <!-- <div ng-include="'../lib/mobile-viewer/viewer.html'"></div> -->
+        <iframe src="http://docs.google.com/gview?url=http://infolab.stanford.edu/pub/papers/google.pdf&embedded=true" style="width:100%; height:100vh;"
+            frameborder="0"></iframe>
+
     </ion-content>
 </ion-modal-view>

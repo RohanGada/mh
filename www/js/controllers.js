@@ -285,7 +285,8 @@ angular.module('starter.controllers', [])
 
       function showcaseUpdated(showcase) {
         isRendering = false;
-        var title = $('#item-title').html($(showcase.nearestItem()).attr('alt'))
+var itemObject = $(showcase.nearestItem())[0]
+        var title = $('#item-title').html(itemObject.element.alt)
         var c = Math.cos((showcase.floatIndex() % 1) * 2 * Math.PI)
         title.css('opacity', 0.5 + (0.5 * c))
       }

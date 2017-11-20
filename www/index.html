@@ -19,36 +19,7 @@
     <script src="lib/cp.js"></script>
     <script>
     window.addEventListener('load', function () {
-        var intervalCarousel = setInterval(function () {
-          // console.count()
-          var carousels = document.querySelectorAll('div.carousel.height-50p');
-          if(carousels.length > 0){
-            clearInterval(intervalCarousel)
-            for (var i = 0; i < carousels.length; i++) {
-              if (window.CP.shouldStopExecution(1)) {
-                break;
-              }
-              carousel(carousels[i],'carousel');
-            }
-            window.CP.exitedLoop(1);
-          }
-         }, 500);
-        var intervalCarousel1 = setInterval(function () {
-          // console.count()
-          var carousels2 = document.querySelectorAll('div.carousel.h-5');
-          if(carousels2.length > 0){
-            clearInterval(intervalCarousel1)
-            for (var i = 0; i < carousels2.length; i++) {
-              if (window.CP.shouldStopExecution(1)) {
-                break;
-                  }
-              carousel(carousels2[i],'carousels2');
-            }
-            window.CP.exitedLoop(1);
-          }
-         }, 500);
         
-
       });
 
       function carousel(root,name) {

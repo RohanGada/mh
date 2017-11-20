@@ -219,7 +219,7 @@ angular.module('starter.controllers', [])
     $scope.grid = _.chunk($scope.gridIcons, 3);
     console.log($scope.grid)
   })
-  .controller('SearchCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate) {
+  .controller('SearchCtrl', function ($scope, $state, $stateParams, $ionicSideMenuDelegate) {
     $ionicSideMenuDelegate.canDragContent(false);
     $scope.swipeLeft = function (name) {
       window
@@ -233,6 +233,7 @@ angular.module('starter.controllers', [])
     };
     var isRendering = false;
     $scope.canDrag = true
+    console.log('loaded')
     $scope.dragged = function (ev, name) {
       //       if($scope.canDrag){
       //         $scope.canDrag = false;
@@ -246,21 +247,26 @@ angular.module('starter.controllers', [])
       //     }
 
     }
+var persistItem = {};
+
     $scope.swipeCarouselRight = function () {
-      console.log('right', isRendering)
       if (!isRendering) {
         $('.nav > .left').click();
         isRendering = true;
       }
     };
     $scope.swipeCarouselLeft = function () {
-      console.log('left', isRendering)
       if (!isRendering) {
 
         $('.nav > .right').click();
         isRendering = true;
       }
     };
+$scope.navigateMe = function (stateName, clickedItem) {
+  if (clickedItem == persistItem.element.alt) {
+    $state.go(stateName);
+  }
+}
     $(function () {
       var showcase = $("#showcase")
 
@@ -273,8 +279,8 @@ angular.module('starter.controllers', [])
         },
         buttonLeft: $(".nav > .left"),
         buttonRight: $(".nav > .right"),
-        autoPlay: true,
-        bringToFront: true,
+        autoPlay: false,
+        bringToFront: false,
         onRendered: showcaseUpdated,
         onLoaded: function () {
           showcase.css('visibility', 'visible')
@@ -282,10 +288,13 @@ angular.module('starter.controllers', [])
           showcase.fadeIn(1500)
         }
       })
+      
 
       function showcaseUpdated(showcase) {
         isRendering = false;
-var itemObject = $(showcase.nearestItem())[0]
+persistItem = $(showcase.nearestItem())[0];
+
+        var itemObject = $(showcase.nearestItem())[0]
         var title = $('#item-title').html(itemObject.element.alt)
         var c = Math.cos((showcase.floatIndex() % 1) * 2 * Math.PI)
         title.css('opacity', 0.5 + (0.5 * c))

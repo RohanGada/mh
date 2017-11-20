@@ -29,9 +29,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       .backButton
       .previousTitleText(false)
       .text('');
-    // $ionicConfigProvider
-    //   .views
-    //   .maxCache(0);
+    $ionicConfigProvider
+      .views
+      .maxCache(0);
     $stateProvider
 
       .state('app', {

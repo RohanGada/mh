@@ -32,11 +32,11 @@
 </div> -->
 <div id="wrap" on-swipe-left="swipeCarouselLeft()" on-swipe-right="swipeCarouselRight()">
   <div id="showcase" class="noselect" on-swipe-left="swipeCarouselLeft()" on-swipe-right="swipeCarouselRight()">
-    <img class="cloud9-item" src="img/carousel/dropbox.png" alt="MM Box">
-    <img class="cloud9-item" src="img/carousel/red-cross.png" alt="Emergency">
-    <img class="cloud9-item" src="img/carousel/rupee.png" alt="Stocks">
-    <img class="cloud9-item" src="img/carousel/travel.png" alt="Travel">
-    <img class="cloud9-item" src="img/carousel/central.png" alt="MeCentral">
+    <img class="cloud9-item" ng-click="navigateMe('','MM Box')" src="img/carousel/dropbox.png" alt="MM Box">
+    <img class="cloud9-item" ng-click="navigateMe('','Emergency')" src="img/carousel/red-cross.png" alt="Emergency">
+    <img class="cloud9-item" ng-click="navigateMe('','Stocks')" src="img/carousel/rupee.png" alt="Stocks">
+    <img class="cloud9-item" ng-click="navigateMe('','Travel')" src="img/carousel/travel.png" alt="Travel">
+    <img class="cloud9-item" ng-click="navigateMe('app.employee','MeCentral')" src="img/carousel/central.png" alt="MeCentral">
   </div>
   <p id="item-title">&nbsp;</p>
   <div class="nav" class="noselect" style="display:none;">

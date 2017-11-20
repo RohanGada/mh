@@ -39,7 +39,8 @@ h1 {
 }
 #showcase {
   width: 100%;
-  height: 41vh;
+  height: 31vh;
+  padding-top: 10px;
   /* background: #16235e; 
   background: -moz-linear-gradient(top, #16235e 0%, #020223 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#16235e), color-stop(100%,#020223));
@@ -52,7 +53,7 @@ h1 {
   /* box-shadow: 0px 0px 13px 5px #DB1242; */
   border-radius: 8px;
   /* margin-top: 12px; */
-  margin: 100px 9% 0 9%;
+  margin: 80px 9% 0 9%;
   visibility: hidden;
 }
 #showcase img {
@@ -60,14 +61,17 @@ h1 {
   width: 100px;
 }
 #item-title {
-  color: #F31414;
-  font-size: 29px;
-  letter-spacing: 0.13em;
-  text-shadow: 1px 1px 6px #C72B2B;
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 22px;
-  width: 100%;
+    color: #F31414;
+    font-size: 29px;
+    letter-spacing: 0.13em;
+    text-shadow: 1px 1px 6px #C72B2B;
+    text-align: center;
+    margin-top: -18px;
+    margin-bottom: 22px;
+    width: 100vw;
+    font-size: 16px;
+    color: white;
+
 }
 .nav {
   text-align: center;

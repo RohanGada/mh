@@ -34,12 +34,13 @@ h1 {
   /* fixed width, centered in viewport */
   width: 300px;
   left: 0px;
+  height: 43vh;
   /* margin-left: 50%; */
   position: relative;
 }
 #showcase {
+  height: 33vh;
   width: 100%;
-  height: 31vh;
   padding-top: 10px;
   /* background: #16235e; 
   background: -moz-linear-gradient(top, #16235e 0%, #020223 100%);
@@ -66,7 +67,7 @@ h1 {
     letter-spacing: 0.13em;
     text-shadow: 1px 1px 6px #C72B2B;
     text-align: center;
-    margin-top: -18px;
+    margin-top: -3vh;
     margin-bottom: 22px;
     width: 100vw;
     font-size: 16px;

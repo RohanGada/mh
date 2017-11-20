@@ -247,8 +247,8 @@ $scope.pdfModalbreak = modal;
     }
 
 $(function () {
-  var showcase = $("#showcase")
-
+  var showcase = $("#showcase");
+console.log($(".nav > .right"));
   showcase.Cloud9Carousel({
     yPos: 42,
     yRadius: 48,

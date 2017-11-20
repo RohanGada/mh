@@ -292,10 +292,10 @@ $scope.navigateMe = function (stateName, clickedItem) {
 
       function showcaseUpdated(showcase) {
         isRendering = false;
-persistItem = $(showcase.nearestItem())[0];
+      persistItem = $(showcase.nearestItem())[0];
 
-        var itemObject = $(showcase.nearestItem())[0]
-        var title = $('#item-title').html(itemObject.element.alt)
+        // var itemObject = $(showcase.nearestItem())[0]
+        var title = $('#item-title').html(persistItem.element.alt)
         var c = Math.cos((showcase.floatIndex() % 1) * 2 * Math.PI)
         title.css('opacity', 0.5 + (0.5 * c))
       }

@@ -87,7 +87,7 @@ angular.module('starter.controllers', [])
       })
       .then(function (modal) {
         console.log(modal)
-        $scope.pdfModalbreak = modal;
+        $scope.pdfModal = modal;
         $scope.googleDocViewer = $sce.trustAsResourceUrl("http://docs.google.com/gview?url=" + PDFUrl + "&embedded=true");
 
       });

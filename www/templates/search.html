@@ -30,8 +30,8 @@
    <nav>
   </nav>
 </div> -->
-<div id="wrap">
-  <div id="showcase" class="noselect">
+<div id="wrap" on-swipe-left="swipeCarouselLeft()" on-swipe-right="swipeCarouselRight()">
+  <div id="showcase" class="noselect" on-swipe-left="swipeCarouselLeft()" on-swipe-right="swipeCarouselRight()">
     <img class="cloud9-item" src="img/carousel/dropbox.png" alt="Firefox">
     <img class="cloud9-item" src="img/carousel/red-cross.png" alt="Wyzo">
     <img class="cloud9-item" src="img/carousel/rupee.png" alt="Opera">
@@ -40,10 +40,10 @@
     <!-- <img class="cloud9-item" src="safari.png" alt="Safari"> -->
   </div>
   <p id="item-title">&nbsp;</p>
-  <!-- <div class="nav" class="noselect">
+  <div class="nav" class="noselect" style="display:none;">
     <button class="left"> ← </button>
     <button class="right"> → </button>
-  </div> -->
+  </div>
 </div>
 <!-- <div id="cubeTransition">
   <div class="page1 img">

@@ -9952,7 +9952,8 @@ h1 {
   text-shadow: 1px 1px 6px #C72B2B;
   text-align: center;
   margin-top: 30px;
-  margin-bottom: 22px; }
+  margin-bottom: 22px;
+  width: 100%; }
 
 .nav {
   text-align: center; }

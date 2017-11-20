@@ -74,7 +74,7 @@ angular.module('starter.controllers', [])
     $ionicSideMenuDelegate.canDragContent(false);
 
   })
-.controller('MyPaySlipCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate, $ionicModal,$sce) {
+  .controller('MyPaySlipCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate, $ionicModal, $sce) {
     $ionicSideMenuDelegate.canDragContent(false);
     console.log('My Pay Slip');
     $scope.variables = {};
@@ -87,7 +87,7 @@ angular.module('starter.controllers', [])
       })
       .then(function (modal) {
         console.log(modal)
-$scope.pdfModalbreak = modal;
+        $scope.pdfModalbreak = modal;
         $scope.googleDocViewer = $sce.trustAsResourceUrl("http://docs.google.com/gview?url=" + PDFUrl + "&embedded=true");
 
       });
@@ -231,6 +231,7 @@ $scope.pdfModalbreak = modal;
         .CP[name]
         .previousSwipe();
     };
+    var isRendering = false;
     $scope.canDrag = true
     $scope.dragged = function (ev, name) {
       //       if($scope.canDrag){
@@ -245,60 +246,75 @@ $scope.pdfModalbreak = modal;
       //     }
 
     }
+    $scope.swipeCarouselRight = function () {
+      console.log('right', isRendering)
+      if (!isRendering) {
+        $('.nav > .left').click();
+        isRendering = true;
+      }
+    };
+    $scope.swipeCarouselLeft = function () {
+      console.log('left', isRendering)
+      if (!isRendering) {
 
-$(function () {
-  var showcase = $("#showcase");
-console.log($(".nav > .right"));
-  showcase.Cloud9Carousel({
-    yPos: 42,
-    yRadius: 48,
-    mirrorOptions: {
-      gap: 12,
-      height: 0.2
-    },
-    buttonLeft: $(".nav > .left"),
-    buttonRight: $(".nav > .right"),
-    autoPlay: true,
-    bringToFront: true,
-    onRendered: showcaseUpdated,
-    onLoaded: function () {
-      showcase.css('visibility', 'visible')
-      showcase.css('display', 'none')
-      showcase.fadeIn(1500)
-    }
-  })
+        $('.nav > .right').click();
+        isRendering = true;
+      }
+    };
+    $(function () {
+      var showcase = $("#showcase")
 
-  function showcaseUpdated(showcase) {
-    var title = $('#item-title').html($(showcase.nearestItem()).attr('alt'))
-    var c = Math.cos((showcase.floatIndex() % 1) * 2 * Math.PI)
-    title.css('opacity', 0.5 + (0.5 * c))
-  }
+      showcase.Cloud9Carousel({
+        yPos: 42,
+        yRadius: 48,
+        mirrorOptions: {
+          gap: 12,
+          height: 0.2
+        },
+        buttonLeft: $(".nav > .left"),
+        buttonRight: $(".nav > .right"),
+        autoPlay: true,
+        bringToFront: true,
+        onRendered: showcaseUpdated,
+        onLoaded: function () {
+          showcase.css('visibility', 'visible')
+          showcase.css('display', 'none')
+          showcase.fadeIn(1500)
+        }
+      })
 
-  // Simulate physical button click effect
-  $('.nav > button')
-    .click(function (e) {
-      var b = $(e.target).addClass('down')
-      setTimeout(function () {
-        b.removeClass('down')
-      }, 80)
-    })
+      function showcaseUpdated(showcase) {
+        isRendering = false;
+        var title = $('#item-title').html($(showcase.nearestItem()).attr('alt'))
+        var c = Math.cos((showcase.floatIndex() % 1) * 2 * Math.PI)
+        title.css('opacity', 0.5 + (0.5 * c))
+      }
 
-  $(document).keydown(function (e) {
-    //
-    // More codes: http://www.javascripter.net/faq/keycodes.htm
-    //
-    switch (e.keyCode) {
-        /* left arrow */
-      case 37:
-        $('.nav > .left').click()
-        break
+      // Simulate physical button click effect
+      $('.nav > button')
+        .click(function (e) {
+          var b = $(e.target).addClass('down')
+          setTimeout(function () {
+            b.removeClass('down')
+          }, 80)
+        })
 
-        /* right arrow */
-      case 39:
-        $('.nav > .right').click()
-    }
-  })
-});
+      $(document).keydown(function (e) {
+        //
+        // More codes: http://www.javascripter.net/faq/keycodes.htm
+        //
+        switch (e.keyCode) {
+          /* left arrow */
+          case 37:
+            $('.nav > .left').click()
+            break
+
+            /* right arrow */
+          case 39:
+            $('.nav > .right').click()
+        }
+      })
+    });
     // $(document)
     // .ready(function () {
 

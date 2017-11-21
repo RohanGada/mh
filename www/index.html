@@ -44,6 +44,7 @@
           var apothem = s / (2 * Math.tan(Math.PI / n));
 
           figure.style.transformOrigin = '50% 50% ' + -apothem + 'px';
+          figure.style.WebkitTransformOrigin = '50% 50% ' + -apothem + 'px';
 
           for (var i = 0; i < n; i++) {
             if (window.CP.shouldStopExecution(2)) {
@@ -57,7 +58,9 @@
               break;
             }
             images[i].style.transformOrigin = '50% 50% ' + -apothem + 'px';
+            images[i].style.WebkitTransformOrigin = '50% 50% ' + -apothem + 'px';
             images[i].style.transform = 'rotateY( ' + i * theta + 'rad)';
+            images[i].style.WebkitTransform = 'rotateY( ' + i * theta + 'rad)';
           }
           window.CP.exitedLoop(3);
 
@@ -67,6 +70,7 @@
                 break;
               }
               images[i].style.backfaceVisibility = 'hidden';
+              images[i].style.WebkitBackfaceVisibility = 'hidden';
             }
           window.CP.exitedLoop(4);
           rotateCarousel(currImage);
@@ -108,6 +112,7 @@
           //   ++currImage;
           // }else{
             figure.style.transform = 'rotateY(' + touch+ 'rad)';
+            figure.style.WebkitTransform = 'rotateY(' + touch+ 'rad)';
           // }
           // console.log(offset,threshold,x)
           // if(gesture.center.pageX > threshold && gesture.direction =='right'){

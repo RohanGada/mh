@@ -10111,6 +10111,7 @@ h1 {
 .carousel {
   padding: 20px;
   perspective: 800px;
+  -webkit-perspective: 800px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -10121,7 +10122,9 @@ h1 {
     margin: 0;
     width: 120%;
     transform-style: preserve-3d;
-    transition: transform 0.5s; }
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.5s;
+    -webkit-transition: transform 0.5s; }
     .carousel figure img {
       width: 100%;
       box-sizing: border-box;
@@ -10196,7 +10199,8 @@ h1 {
   font-size: 5em;
   color: #fff;
   visibility: hidden;
-  transition: opacity 5ms; }
+  transition: opacity 5ms;
+  -webkit-transition: opacity 5ms; }
 
 #cubeTransition h2 {
   position: relative;

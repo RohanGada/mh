@@ -160,6 +160,7 @@ $viewer-distance: 800px;
 .carousel {
   padding: 20px;
   perspective: $viewer-distance;
+  -webkit-perspective: $viewer-distance;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -171,7 +172,9 @@ $viewer-distance: 800px;
     margin: 0;
     width: $item-width;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     transition: transform 0.5s;
+    -webkit-transition: transform 0.5s;
     img {
       width: 100%;
       box-sizing: border-box;
@@ -268,6 +271,7 @@ $viewer-distance: 800px;
   color: #fff;
   visibility: hidden;
   transition: opacity 5ms;
+  -webkit-transition: opacity 5ms;
 }
 
 #cubeTransition h2 {

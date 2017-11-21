@@ -42,6 +42,7 @@
 
         function setupCarousel(n, s) {
           var apothem = s / (2 * Math.tan(Math.PI / n));
+          console.log('n',n,'s',s,'apothem', apothem)
 
           figure.style.transformOrigin = '50% 50% ' + -apothem + 'px';
           figure.style.WebkitTransformOrigin = '50% 50% ' + -apothem + 'px';
@@ -50,6 +51,7 @@
             if (window.CP.shouldStopExecution(2)) {
               break;
             }
+            console.log('gap',gap)
             images[i].style.padding = gap + 'px';
           }
           window.CP.exitedLoop(2);

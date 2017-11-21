@@ -137,6 +137,7 @@
         function rotateCarousel(imageIndex) {
           console.log(imageIndex * -theta)
           figure.style.transform = 'rotateY(' + imageIndex * -theta + 'rad)';
+          figure.style.WebkitTransform = 'rotateY(' + imageIndex * -theta + 'rad)';
         }
       }</script>
     <link rel="manifest" href="manifest.json">

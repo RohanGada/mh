@@ -10128,6 +10128,7 @@ h1 {
     .carousel figure img {
       width: 100%;
       box-sizing: border-box;
+      -webkit-box-sizing: border-box;
       padding: 0 0px; }
       .carousel figure img:not(:first-of-type) {
         position: absolute;
@@ -10136,6 +10137,7 @@ h1 {
     .carousel figure div img {
       width: 100%;
       box-sizing: border-box;
+      -webkit-box-sizing: border-box;
       padding: 0 0px; }
       .carousel figure div img:not(:first-of-type) {
         position: absolute;

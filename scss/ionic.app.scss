@@ -178,6 +178,7 @@ $viewer-distance: 800px;
     img {
       width: 100%;
       box-sizing: border-box;
+      -webkit-box-sizing: border-box;
       // background: white;
       // border: 2px white solid;
       padding: 0 $item-separation / 2;
@@ -191,6 +192,7 @@ $viewer-distance: 800px;
       img {
         width: 100%;
         box-sizing: border-box; // background: white;
+        -webkit-box-sizing: border-box; // background: white;
         // border: 2px white solid;
         padding: 0 $item-separation / 2;
         &:not(:first-of-type) {

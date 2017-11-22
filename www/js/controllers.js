@@ -79,6 +79,7 @@ angular.module('starter.controllers', [])
     console.log('My Pay Slip');
     $scope.variables = {};
     $scope.variables.month = '';
+
     var PDFUrl = 'http://www.seemasystems.com/bin/downloads/hpms/PaySlip_and_Employee_account.pdf';
     $ionicModal
       .fromTemplateUrl('templates/pdf-viewer.html', {
@@ -99,6 +100,23 @@ angular.module('starter.controllers', [])
     //   $scope.pdfModal.hide();
     // };
     // Cleanup the modal when we're done with it!
+    $scope.showAlert = function () {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Error',
+        template: 'Feature not available on iOS yet.'
+      });
+
+      alertPopup.then(function (res) {
+        $scope.variables.month = undefined;
+      });
+    };
+    $scope.checkOSAndOpenModal = function () {
+      if (ionic.Platform.platform() == 'ios') {
+        $scope.showAlert();
+      } else {
+        $scope.pdfModal.show();
+      }
+    }
     $scope.$on('$destroy', function () {
       $scope
         .pdfModal
@@ -220,6 +238,8 @@ angular.module('starter.controllers', [])
     console.log($scope.grid)
   })
   .controller('SearchCtrl', function ($scope, $state, $stateParams, $ionicSideMenuDelegate) {
+    $scope.platform = ionic.Platform.platform();
+
     $ionicSideMenuDelegate.canDragContent(false);
     $scope.swipeLeft = function (name) {
       window
@@ -247,7 +267,7 @@ angular.module('starter.controllers', [])
       //     }
 
     }
-var persistItem = {};
+    var persistItem = {};
 
     $scope.swipeCarouselRight = function () {
       if (!isRendering) {
@@ -262,44 +282,44 @@ var persistItem = {};
         isRendering = true;
       }
     };
-$scope.navigateMe = function (stateName, clickedItem) {
-  if (clickedItem == persistItem.element.alt) {
-    $state.go(stateName);
-  }
-}
+    $scope.navigateMe = function (stateName, clickedItem) {
+      if (clickedItem == persistItem.element.alt) {
+        $state.go(stateName);
+      }
+    }
     $(function () {
-var intervalCarousel = setInterval(function () {
-  // console.count()
-  var carousels = document.querySelectorAll('div.carousel.height-50p');
-  if (carousels.length > 0) {
-    clearInterval(intervalCarousel)
-    for (var i = 0; i < carousels.length; i++) {
-      if (window.CP.shouldStopExecution(1)) {
-        break;
-      }
-      carousel(carousels[i], 'carousel');
-    }
-    window
-      .CP
-      .exitedLoop(1);
-  }
-}, 500);
-var intervalCarousel1 = setInterval(function () {
-  // console.count()
-  var carousels2 = document.querySelectorAll('div.carousel.h-5');
-  if (carousels2.length > 0) {
-    clearInterval(intervalCarousel1)
-    for (var i = 0; i < carousels2.length; i++) {
-      if (window.CP.shouldStopExecution(1)) {
-        break;
-      }
-      carousel(carousels2[i], 'carousels2');
-    }
-    window
-      .CP
-      .exitedLoop(1);
-  }
-}, 500);
+      var intervalCarousel = setInterval(function () {
+        // console.count()
+        var carousels = document.querySelectorAll('div.carousel.height-50p');
+        if (carousels.length > 0) {
+          clearInterval(intervalCarousel)
+          for (var i = 0; i < carousels.length; i++) {
+            if (window.CP.shouldStopExecution(1)) {
+              break;
+            }
+            carousel(carousels[i], 'carousel');
+          }
+          window
+            .CP
+            .exitedLoop(1);
+        }
+      }, 500);
+      var intervalCarousel1 = setInterval(function () {
+        // console.count()
+        var carousels2 = document.querySelectorAll('div.carousel.h-5');
+        if (carousels2.length > 0) {
+          clearInterval(intervalCarousel1)
+          for (var i = 0; i < carousels2.length; i++) {
+            if (window.CP.shouldStopExecution(1)) {
+              break;
+            }
+            carousel(carousels2[i], 'carousels2');
+          }
+          window
+            .CP
+            .exitedLoop(1);
+        }
+      }, 500);
 
 
       var showcase = $("#showcase")
@@ -322,7 +342,7 @@ var intervalCarousel1 = setInterval(function () {
           showcase.fadeIn(1500)
         }
       })
-      
+
 
       function showcaseUpdated(showcase) {
         isRendering = false;

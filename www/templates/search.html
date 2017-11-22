@@ -58,7 +58,7 @@
     <img src="lib/images/img4.png" alt="img4" height="100%" width="100%">
   </div>
 </div> -->
-<div ng-if="platform == 'ios'" class="carousel h-5" data-gap="5" on-drag="dragged($event,'carousels2')" on-swipe-left="swipeLeft('carousels2')" on-swipe-right="swipeRight('carousels2')">
+<div ng-if="platform !== 'ios'" class="carousel h-5" data-gap="5" on-drag="dragged($event,'carousels2')" on-swipe-left="swipeLeft('carousels2')" on-swipe-right="swipeRight('carousels2')">
   <figure class="img_style">
     <img src="lib/images/img1.png" alt="">
     <img src="lib/images/img2.png" alt="">
@@ -71,7 +71,7 @@
   </nav>
 </div>
 <!-- <div ng-if="platform !== 'ios'" > -->
-<ul ng-if="platform !== 'ios'" rn-carousel class="image full-image carousel-slider-ios" rn-carousel-transition='hexagon' rn-carousel-easing style="height:50vh;" rn-carousel-index="0" rn-carousel-controls-allow-loop>
+<ul ng-if="platform == 'ios'" rn-carousel class="image full-image carousel-slider-ios" rn-carousel-transition='hexagon' rn-carousel-easing style="height:50vh;" rn-carousel-index="0" rn-carousel-controls-allow-loop>
 
 
     <li><img class="full-image" src="lib/images/img1.png" alt=""></li>

@@ -5,22 +5,42 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 // var _ = require('lodash');
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic','ngCordova', 'starter.controllers',])
 
-  .run(function ($ionicPlatform) {
+.run(function ($ionicPlatform, $cordovaStatusbar) {
     $ionicPlatform.ready(function () {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
+
       if (window.cordova && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         cordova.plugins.Keyboard.disableScroll(true);
 
       }
+$cordovaStatusbar.overlaysWebView(true);
+
+// styles: Default : 0, LightContent: 1, BlackTranslucent: 2, BlackOpaque: 3
+$cordovaStatusbar.style(1);
+
+// supported names: black, darkGray, lightGray, white, gray, red, green, blue,
+// cyan, yellow, magenta, orange, purple, brown
+$cordovaStatusbar.styleColor('black');
+
+$cordovaStatusbar.styleHex('#000');
+
+$cordovaStatusbar.hide();
+
+$cordovaStatusbar.show();
+
+var isVisible = $cordovaStatusbar.isVisible();
+
       if (window.StatusBar) {
         // org.apache.cordova.statusbar required
         StatusBar.styleDefault();
       }
+
     });
+    
   })
 
   .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {

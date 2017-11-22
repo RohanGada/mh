@@ -74,7 +74,7 @@ angular.module('starter.controllers', [])
     $ionicSideMenuDelegate.canDragContent(false);
 
   })
-  .controller('MyPaySlipCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate, $ionicModal, $sce) {
+.controller('MyPaySlipCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate, $ionicModal, $sce, $ionicPopup) {
     $ionicSideMenuDelegate.canDragContent(false);
     console.log('My Pay Slip');
     $scope.variables = {};

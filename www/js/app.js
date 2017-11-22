@@ -138,4 +138,17 @@ var isVisible = $cordovaStatusbar.isVisible();
       });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/search');
+  })
+.filter('letterLimit', function () {
+    return function (value, limit) {
+      if (value) {
+        if (value.length < limit) {
+          return value;
+        } else {
+          return value.slice(0, limit - 3) + "...";
+        }
+      } else {
+        return "";
+      }
+    };
   });

@@ -18,7 +18,7 @@
             <img ng-src="{{tabIcon.img}}" alt="">
         </div>
         <div>
-            <span class="text-center">{{tabIcon.label}}</span>
+            <span class="text-center">{{tabIcon.label | letterLimit:12}}</span>
         </div>
       </div>
     </div>

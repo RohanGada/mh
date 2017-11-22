@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 // var _ = require('lodash');
-angular.module('starter', ['ionic','ngCordova', 'starter.controllers',])
+angular.module('starter', ['ionic','ngCordova', 'starter.controllers','angular-carousel'])
 
 .run(function ($ionicPlatform, $cordovaStatusbar) {
     $ionicPlatform.ready(function () {
@@ -17,6 +17,11 @@ angular.module('starter', ['ionic','ngCordova', 'starter.controllers',])
         cordova.plugins.Keyboard.disableScroll(true);
 
       }
+      console.log(window.StatusBar)
+      if (window.StatusBar) {
+        // org.apache.cordova.statusbar required
+        console.log(StatusBar);
+        StatusBar.styleDefault();
 $cordovaStatusbar.overlaysWebView(true);
 
 // styles: Default : 0, LightContent: 1, BlackTranslucent: 2, BlackOpaque: 3
@@ -34,9 +39,6 @@ $cordovaStatusbar.show();
 
 var isVisible = $cordovaStatusbar.isVisible();
 
-      if (window.StatusBar) {
-        // org.apache.cordova.statusbar required
-        StatusBar.styleDefault();
       }
 
     });

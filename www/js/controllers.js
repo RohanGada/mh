@@ -102,8 +102,8 @@ angular.module('starter.controllers', [])
     // Cleanup the modal when we're done with it!
     $scope.showAlert = function () {
       var alertPopup = $ionicPopup.alert({
-        title: 'Error',
-        template: 'Feature not available on iOS yet.'
+        title: '',
+        template : "<span style='color:black;text-align:center'>Feature not available on iOS yet.</span>"
       });
 
       alertPopup.then(function (res) {

@@ -305,6 +305,14 @@ $viewer-distance: 800px;
 .visible {
   visibility: visible !important;
 }
+.carousel-slider-ios{
+  li{
+    img{
+      border: 2px solid black;
+
+    }
+  }
+}
 
 .rotateCubeTopOut {
   transform-origin: 50% 100%;

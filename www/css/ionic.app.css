@@ -10230,6 +10230,9 @@ h1 {
 .visible {
   visibility: visible !important; }
 
+.carousel-slider-ios li img {
+  border: 2px solid black; }
+
 .rotateCubeTopOut {
   transform-origin: 50% 100%;
   -webkit-transform-origin: 50% 100%;

@@ -122,7 +122,7 @@ angular.module('starter.controllers', [])
     $scope.openFile = function (PDF) {
 
       var options = {
-        location: 'yes',
+        location: 'no',
         clearcache: 'no',
 closebuttoncaption:'Go back',
 toolbar:'yes',

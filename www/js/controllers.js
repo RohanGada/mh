@@ -74,7 +74,8 @@ angular.module('starter.controllers', [])
     $ionicSideMenuDelegate.canDragContent(false);
 
   })
-.controller('MyPaySlipCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate, $ionicModal, $sce, $ionicPopup) {
+.controller('MyPaySlipCtrl', function ($scope, $stateParams, $ionicSideMenuDelegate, $ionicModal, $sce, $ionicPopup, $cordovaInAppBrowser) {
+
     $ionicSideMenuDelegate.canDragContent(false);
     console.log('My Pay Slip');
     $scope.variables = {};
@@ -111,12 +112,33 @@ angular.module('starter.controllers', [])
       });
     };
     $scope.checkOSAndOpenModal = function () {
-      if (ionic.Platform.platform() == 'ios') {
-        $scope.showAlert();
-      } else {
-        $scope.pdfModal.show();
-      }
+      // // if (ionic.Platform.platform() == 'ios') {
+      //   $scope.showAlert();
+      // } else {
+      //   $scope.pdfModal.show();
+      // }
+      $scope.openFile(PDFUrl);
     }
+    $scope.openFile = function (PDF) {
+      console.log(PDF);
+      $sce.trustAsResourceUrl("http://docs.google.com/gview?url=" + PDF + "&embedded=true");
+
+      var options = {
+        location: 'yes',
+        clearcache: 'no'
+      };
+
+      $cordovaInAppBrowser.open($sce.trustAsResourceUrl("http://docs.google.com/gview?url=" + PDF + "&embedded=true"), '_system', options)
+
+        .then(function (event) {
+        })
+        .catch(function (event) {
+        });
+
+
+      // $cordovaInAppBrowser.close();
+    };
+
     $scope.$on('$destroy', function () {
       $scope
         .pdfModal

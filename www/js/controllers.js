@@ -130,8 +130,8 @@ toolbarposition:'top',
 hardwareback:'yes'
       };
 
-      var platformTarget = ionic.Platform.platform() == 'ios' ? '_system':'_self';
-$cordovaInAppBrowser.open($sce.trustAsResourceUrl("http://docs.google.com/viewer?url=" + PDF + ""), platformTarget, options)
+      var platformTarget = ionic.Platform.platform() == 'ios' ? '_self':'_self';
+$cordovaInAppBrowser.open($sce.trustAsResourceUrl("https://docs.google.com/viewer?url=" + PDF + ""), platformTarget, options)
   .then(function (event) {})
   .catch(function (event) {});
 

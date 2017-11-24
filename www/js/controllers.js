@@ -122,7 +122,7 @@ angular.module('starter.controllers', [])
     $scope.openFile = function (PDF) {
 
       var options = {
-        location: 'no',
+        location: 'yes',
         clearcache: 'no',
 closebuttoncaption:'Go back',
 toolbar:'yes',
@@ -130,7 +130,7 @@ toolbarposition:'top',
 hardwareback:'yes'
       };
 
-      var platformTarget = ionic.Platform.platform() == 'ios' ? '_self':'_self';
+      var platformTarget = ionic.Platform.platform() == 'ios' ? '_system':'_self';
 $cordovaInAppBrowser.open($sce.trustAsResourceUrl("https://docs.google.com/viewer?url=" + PDF + ""), platformTarget, options)
   .then(function (event) {})
   .catch(function (event) {});

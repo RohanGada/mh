@@ -131,7 +131,7 @@ hardwareback:'yes'
       };
 
       var platformTarget = ionic.Platform.platform() == 'ios' ? '_system':'_self';
-$cordovaInAppBrowser.open($sce.trustAsResourceUrl("http://docs.google.com/gview?url=" + PDF + "&embedded=true"), platformTarget, options)
+$cordovaInAppBrowser.open($sce.trustAsResourceUrl("http://docs.google.com/viewer?url=" + PDF + ""), platformTarget, options)
   .then(function (event) {})
   .catch(function (event) {});
 

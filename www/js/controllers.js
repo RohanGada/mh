@@ -112,7 +112,7 @@ angular.module('starter.controllers', [])
       });
     };
     $scope.checkOSAndOpenModal = function () {
-      // // if (ionic.Platform.platform() == 'ios') {
+      // // if (ionic.Platform.platform() == 'ios) {
       //   $scope.showAlert();
       // } else {
       //   $scope.pdfModal.show();
@@ -120,21 +120,20 @@ angular.module('starter.controllers', [])
       $scope.openFile(PDFUrl);
     }
     $scope.openFile = function (PDF) {
-      console.log(PDF);
-      $sce.trustAsResourceUrl("http://docs.google.com/gview?url=" + PDF + "&embedded=true");
 
       var options = {
         location: 'yes',
-        clearcache: 'no'
+        clearcache: 'no',
+closebuttoncaption:'Go back',
+toolbar:'yes',
+toolbarposition:'top',
+hardwareback:'yes'
       };
 
-      $cordovaInAppBrowser.open($sce.trustAsResourceUrl("http://docs.google.com/gview?url=" + PDF + "&embedded=true"), '_system', options)
-
-        .then(function (event) {
-        })
-        .catch(function (event) {
-        });
-
+      var platformTarget = ionic.Platform.platform() == 'ios' ? '_system':'_self';
+$cordovaInAppBrowser.open($sce.trustAsResourceUrl("http://docs.google.com/gview?url=" + PDF + "&embedded=true"), platformTarget, options)
+  .then(function (event) {})
+  .catch(function (event) {});
 
       // $cordovaInAppBrowser.close();
     };
